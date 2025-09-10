@@ -38,13 +38,25 @@ passwordInput.addEventListener('input', function () {
   if (!val) {
     strengthBar.style.width = '0%';
     strengthText.textContent = '';
+    strengthText.style.transform = 'none';
     return;
   }
   const { level, color, width } = checkStrength(val);
   strengthBar.style.width = width;
   strengthBar.style.background = color;
+  strengthBar.style.boxShadow = `0 0 12px 0 ${color}55`;
   strengthText.textContent = level;
   strengthText.style.color = color;
+  // Animate text pop
+  strengthText.style.transform = 'scale(1.15)';
+  setTimeout(() => {
+    strengthText.style.transform = 'scale(1)';
+  }, 180);
+  // Shake input if weak
+  if (level === 'Weak') {
+    passwordInput.classList.add('shake');
+    setTimeout(() => passwordInput.classList.remove('shake'), 350);
+  }
 });
 
 // Password Generator
@@ -100,8 +112,12 @@ document.getElementById('generator-form').addEventListener('submit', function (e
   };
   const pwd = generatePassword(opts);
   generatedPassword.value = pwd;
-  generatedPassword.classList.add('pop');
-  setTimeout(() => generatedPassword.classList.remove('pop'), 300);
+  generatedPassword.style.transform = 'scale(1.12)';
+  generatedPassword.style.boxShadow = '0 0 0 3px #60a5fa55';
+  setTimeout(() => {
+    generatedPassword.style.transform = 'scale(1)';
+    generatedPassword.style.boxShadow = '';
+  }, 220);
   copyMsg.textContent = '';
   copyMsg.classList.remove('visible');
 });
@@ -113,7 +129,11 @@ copyBtn.addEventListener('click', function () {
   document.execCommand('copy');
   copyMsg.textContent = 'Copied!';
   copyMsg.classList.add('visible');
-  setTimeout(() => copyMsg.classList.remove('visible'), 1200);
+  copyBtn.style.transform = 'scale(1.15) rotate(-6deg)';
+  setTimeout(() => {
+    copyBtn.style.transform = 'scale(1) rotate(0)';
+    copyMsg.classList.remove('visible');
+  }, 1200);
 });
 
 // Accessibility: allow pressing Enter on copy button
@@ -122,3 +142,18 @@ copyBtn.addEventListener('keyup', function (e) {
     copyBtn.click();
   }
 });
+
+// Add shake animation for weak password
+const style = document.createElement('style');
+style.innerHTML = `
+.shake {
+  animation: shakeAnim 0.35s cubic-bezier(.36,.07,.19,.97) both;
+}
+@keyframes shakeAnim {
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-8px); }
+  40%, 60% { transform: translateX(8px); }
+}
+`;
+document.head.appendChild(style);
