@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Generator & Strength Checker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="checker-section">
+      <h1>Password Strength Checker</h1>
+      <label for="password-input" class="visually-hidden">Enter password</label>
+      <input type="password" id="password-input" placeholder="Enter your password" autocomplete="off" />
+      <div class="strength-meter" aria-hidden="true">
+        <div id="strength-bar" class="strength-bar"></div>
+      </div>
+      <div id="strength-text" class="strength-text" aria-live="polite"></div>
+    </section>
+    <section class="generator-section">
+      <h1>Password Generator</h1>
+      <form id="generator-form" autocomplete="off">
+        <div class="option-row">
+          <label for="length">Length:</label>
+          <input type="range" id="length" name="length" min="6" max="32" value="12" />
+          <span id="length-value">12</span>
+        </div>
+        <div class="option-row">
+          <label><input type="checkbox" id="uppercase" checked /> Uppercase</label>
+          <label><input type="checkbox" id="lowercase" checked /> Lowercase</label>
+          <label><input type="checkbox" id="numbers" checked /> Numbers</label>
+          <label><input type="checkbox" id="symbols" checked /> Special</label>
+        </div>
+        <button type="submit" id="generate-btn">Generate Password</button>
+      </form>
+      <div class="output-row">
+        <input type="text" id="generated-password" readonly aria-label="Generated password" />
+        <button id="copy-btn" aria-label="Copy password to clipboard">Copy</button>
+      </div>
+      <div id="copy-msg" class="copy-msg" aria-live="polite"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
