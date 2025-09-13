@@ -29,4 +29,4 @@ Visit the main site: [debasisbiswas.me](https://debasisbiswas.me)
 
 ---
 
-**Made with ❤️ by Debasis Biswas**
+**Made with ❤️ by Debasis**
