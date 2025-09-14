@@ -1,3 +1,22 @@
+/* Footer styles */
+.footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #6366f1;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  opacity: 0.92;
+  animation: fadeIn 1.2s 0.2s backwards;
+}
+.footer a {
+  color: #2d3748;
+  text-decoration: underline dotted;
+  transition: color 0.2s;
+}
+.footer a:hover {
+  color: #6366f1;
+}
 /* Reset & base styles */
 * {
   box-sizing: border-box;
