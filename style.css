@@ -26,7 +26,7 @@
 html, body {
   height: 100%;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  background: linear-gradient(135deg, pink, blue  100%);
   color: #222;
 }
 body {
@@ -132,7 +132,7 @@ input[type="range"] {
   font-weight: 500;
 }
 button {
-  background: linear-gradient(90deg, #6366f1 0%, #60a5fa 100%);
+  background: linear-gradient(90deg, #17bfce 0%, #e92719 100%);
   color: #fff;
   border: none;
   border-radius: 0.7rem;
@@ -140,7 +140,7 @@ button {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  box-shadow: 0 2px 8px rgba(55,48,163,0.12);
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   position: relative;
   overflow: hidden;
