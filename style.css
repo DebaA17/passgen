@@ -197,23 +197,60 @@ button:focus {
   overflow: hidden;
 }
 @media (max-width: 600px) {
+  html, body {
+    font-size: 15px;
+  }
   .container {
-    padding: 1.2rem 0.5rem;
-    max-width: 98vw;
-    border-radius: 1.2rem;
+    padding: 1rem 0.2rem;
+    max-width: 99vw;
+    border-radius: 1rem;
     box-shadow: 0 4px 16px rgba(60,60,120,0.13);
+    gap: 1.2rem;
   }
   h1 {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
   }
   .option-row {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+    align-items: stretch;
+    gap: 0.3rem;
   }
   .output-row {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.3rem;
     align-items: stretch;
+  }
+  input[type="password"],
+  input[type="text"] {
+    font-size: 0.98rem;
+    padding: 0.6rem 0.7rem;
+  }
+  #generated-password {
+    font-size: 1rem;
+    padding: 0.6rem 0.7rem;
+  }
+  button {
+    font-size: 0.98rem;
+    padding: 0.6rem 1rem;
+  }
+  .strength-text {
+    font-size: 0.95rem;
+  }
+  .strength-meter {
+    height: 0.5rem;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    padding: 0.5rem 0.1rem;
+    border-radius: 0.7rem;
+  }
+  h1 {
+    font-size: 0.92rem;
+  }
+  button {
+    font-size: 0.92rem;
+    padding: 0.5rem 0.7rem;
   }
 }
