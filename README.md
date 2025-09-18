@@ -25,6 +25,9 @@ No build steps or dependencies required.
 
 ## Preview
 
+
+![Demo Screenshot](demo.png)
+
 Visit the main site: [debasisbiswas.me](https://debasisbiswas.me)
 
 ---
